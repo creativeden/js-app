@@ -1,7 +1,16 @@
-import Component from '../core/component'
+import {Component} from '../core/component'
 
-class HeaderComponent extends Component {
+export class HeaderComponent extends Component {
     constructor(id) {
         super (id)
     }
+
+    init() {
+        const btn = this.$el.querySelector('.js-header-start')
+        btn.addEventListener('click', buttonHandler.bind(this))
+    }
+}
+
+function buttonHandler() {
+    this.hide()
 }
